@@ -1,0 +1,6 @@
+.idea
+__pycache__
+venv
+for_review
+old
+password.py

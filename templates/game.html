@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div align="center">
+    <a href="{{ url_for('index') }}">На главную!</a>
+    <p class="bg-info text-info">{{ game_desc }}</p>
+    <p class="bg-success text-success">{{ cur_loc }}</p>
+    <p class="bg-warning text-warning">{{ warning }}</p>
+    <p class="bg-info text-info">{{ win_desc }}</p>
+    <form action="" method="post">
+        <b>{{ form.side_of_world.label }}</b>
+        <br>
+        {{ form.side_of_world }}
+        <br>
+        <b>{{ form.step_value.label }}</b>
+        <br>
+        {{ form.step_value }}
+        {% for error in form.step_value.errors %}
+            {{ error }}
+        {% endfor %}
+        <br>
+        <div class="btn">
+            {{ form.submit_button }}
+        </div>
+    </form>
+  </div>
+{% endblock %}

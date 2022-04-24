@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron" align="center">
+        <form action="" method="post">
+            {{ form.player_name.label }}
+            <br>
+            {{ form.player_name }}
+            {% for error in form.player_name.errors %}
+                {{ error }}
+            {% endfor %}
+            <br>
+            <div class="btn">
+                {{ form.submit_button }}
+            </div>
+        </form>
+    </div>
+{% endblock %}
